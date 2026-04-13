@@ -147,6 +147,26 @@
             0%, 30% { opacity: 1; transform: scale(1); }
             35%, 100% { opacity: 0; transform: scale(0.9); }
         }
+
+        /* 가격 섹션 스크롤 애니메이션 */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal-scale.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
     </style>
 </head>
 <body class="bg-slate-950 text-white font-sans antialiased overflow-x-hidden selection:bg-neon-blue selection:text-slate-900 break-keep">
@@ -988,6 +1008,146 @@
         </div>
     </section>
 
+    <!-- 4.5. Pricing Section (가치 적층 + 극적 가격 공개) -->
+    <section id="pricing" class="py-24 relative z-10 border-b border-white/5 overflow-hidden">
+        <!-- 배경 광원 -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-neon-blue/10 blur-[150px] rounded-full"></div>
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-neon-blue font-bold tracking-widest text-sm mb-3 block">PRICING</span>
+                <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold text-white">이 모임에서 가져가는 것들</h2>
+            </div>
+
+            <!-- 가치 적층 (체크리스트 스타일) -->
+            <div class="space-y-4 max-w-2xl mx-auto mb-10">
+                <div class="reveal glass-card p-5 sm:p-6 rounded-xl border-white/5" style="transition-delay:0.1s;">
+                    <div class="flex items-start">
+                        <div class="w-7 h-7 rounded-full bg-neon-blue/10 flex items-center justify-center mr-4 mt-0.5 shrink-0 border border-neon-blue/20">
+                            <i data-lucide="check" class="w-4 h-4 text-neon-blue"></i>
+                        </div>
+                        <div>
+                            <span class="text-white font-bold text-sm sm:text-base">AI 트렌드 해킹 & 대본 자동화 워크플로우</span>
+                            <div class="flex items-center gap-2 mt-1.5">
+                                <span class="text-xs text-slate-500">별도 온라인 강의 기준</span>
+                                <span class="text-[10px] sm:text-xs text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded-full border border-white/5">시장가치 30만원</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal glass-card p-5 sm:p-6 rounded-xl border-white/5" style="transition-delay:0.2s;">
+                    <div class="flex items-start">
+                        <div class="w-7 h-7 rounded-full bg-neon-blue/10 flex items-center justify-center mr-4 mt-0.5 shrink-0 border border-neon-blue/20">
+                            <i data-lucide="check" class="w-4 h-4 text-neon-blue"></i>
+                        </div>
+                        <div>
+                            <span class="text-white font-bold text-sm sm:text-base">하이퍼리얼 인물 시퀀스 제작 노하우</span>
+                            <div class="flex items-center gap-2 mt-1.5">
+                                <span class="text-xs text-slate-500">1:1 프라이빗 코칭 기준</span>
+                                <span class="text-[10px] sm:text-xs text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded-full border border-white/5">시장가치 40만원</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal glass-card p-5 sm:p-6 rounded-xl border-white/5" style="transition-delay:0.3s;">
+                    <div class="flex items-start">
+                        <div class="w-7 h-7 rounded-full bg-neon-blue/10 flex items-center justify-center mr-4 mt-0.5 shrink-0 border border-neon-blue/20">
+                            <i data-lucide="check" class="w-4 h-4 text-neon-blue"></i>
+                        </div>
+                        <div>
+                            <span class="text-white font-bold text-sm sm:text-base">VEO 3.1 영상 렌더링 + 루프 편집 실전</span>
+                            <div class="flex items-center gap-2 mt-1.5">
+                                <span class="text-xs text-slate-500">오프라인 워크샵 기준</span>
+                                <span class="text-[10px] sm:text-xs text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded-full border border-white/5">시장가치 30만원</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal glass-card p-5 sm:p-6 rounded-xl border-white/5" style="transition-delay:0.4s;">
+                    <div class="flex items-start">
+                        <div class="w-7 h-7 rounded-full bg-neon-blue/10 flex items-center justify-center mr-4 mt-0.5 shrink-0 border border-neon-blue/20">
+                            <i data-lucide="check" class="w-4 h-4 text-neon-blue"></i>
+                        </div>
+                        <div>
+                            <span class="text-white font-bold text-sm sm:text-base">유튜브 채널 개설 & 브랜딩 세팅</span>
+                            <div class="flex items-center gap-2 mt-1.5">
+                                <span class="text-xs text-slate-500">전문 대행 기준</span>
+                                <span class="text-[10px] sm:text-xs text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded-full border border-white/5">시장가치 50만원</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal glass-card p-5 sm:p-6 rounded-xl border-white/5" style="transition-delay:0.5s;">
+                    <div class="flex items-start">
+                        <div class="w-7 h-7 rounded-full bg-neon-purple/10 flex items-center justify-center mr-4 mt-0.5 shrink-0 border border-neon-purple/20">
+                            <i data-lucide="check" class="w-4 h-4 text-neon-purple"></i>
+                        </div>
+                        <div>
+                            <span class="text-white font-bold text-sm sm:text-base">시크릿 프롬프트 레시피북 (PDF)</span>
+                            <div class="flex items-center gap-2 mt-1.5">
+                                <span class="text-xs text-slate-500">현장 참석자 단독 제공</span>
+                                <span class="text-[10px] sm:text-xs text-neon-purple bg-neon-purple/10 px-2 py-0.5 rounded-full border border-neon-purple/20">비매품</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 총 시장가치 -->
+            <div class="reveal text-center mb-6" style="transition-delay:0.6s;">
+                <div class="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-slate-800/60 border border-white/10">
+                    <span class="text-slate-400 text-sm sm:text-base">총 시장가치</span>
+                    <span class="text-white font-black text-xl sm:text-2xl line-through decoration-red-500 decoration-2">1,500,000원</span>
+                </div>
+            </div>
+
+            <!-- 강의팔이 언급 -->
+            <p class="reveal text-center text-slate-500 text-sm sm:text-base mb-16" style="transition-delay:0.7s;">
+                실제로 어딘가에서는 이와 비슷한 커리큘럼을<br class="hidden sm:block"/>
+                <strong class="text-slate-300">100만원 가까운 금액에 판매</strong>하고 있을 겁니다.
+            </p>
+
+            <!-- 메인 가격 카드 -->
+            <div class="reveal-scale max-w-lg mx-auto" style="transition-delay:0.8s;">
+                <div class="glass-panel rounded-3xl p-1 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-r from-neon-blue via-slate-800 to-neon-purple opacity-50"></div>
+
+                    <div class="bg-slate-950/90 backdrop-blur-3xl rounded-[23px] p-8 md:p-10 relative z-10 text-center">
+                        <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-red-500/10 border border-red-500/30 mb-6">
+                            <span class="flex h-2 w-2 rounded-full bg-red-500 mr-2 animate-pulse"></span>
+                            <span class="text-red-400 text-xs font-bold tracking-wide">첫 모임 10명 한정</span>
+                        </div>
+
+                        <div class="mb-6">
+                            <span class="text-4xl sm:text-5xl md:text-6xl font-black text-neon-blue" style="text-shadow: 0 0 30px rgba(0,240,255,0.3);">10,000</span>
+                            <span class="text-xl sm:text-2xl font-bold text-slate-300 ml-1">원</span>
+                        </div>
+
+                        <p class="text-slate-300 text-sm sm:text-base mb-6 leading-relaxed">
+                            2시간 30분 안에 직접 만들고, 직접 올리고 갑니다.
+                        </p>
+
+                        <div class="inline-flex items-center px-4 py-2 rounded-lg bg-slate-800/80 border border-slate-700 mb-8">
+                            <i data-lucide="info" class="w-4 h-4 mr-2 text-slate-400"></i>
+                            <span class="text-slate-400 text-xs sm:text-sm">다음 모임부터는 <strong class="text-white">30,000원</strong>으로 운영됩니다</span>
+                        </div>
+
+                        <button onclick="openModal()" class="btn-glow w-full py-4 rounded-xl bg-white text-slate-900 font-bold text-base sm:text-lg hover:scale-105 transition-transform flex items-center justify-center group mb-4">
+                            지금 10,000원으로 신청하기
+                            <i data-lucide="arrow-right" class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+
+                        <p class="text-slate-500 text-xs sm:text-sm">강의를 파는 게 아닙니다.<br/>같이 만들어보는 자리에 초대하는 겁니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- 5. CTA & Scarcity (마감 임박) -->
     <section id="apply" class="py-32 relative z-10 overflow-hidden">
         <!-- 배경 광원 -->
@@ -1156,6 +1316,16 @@
                 });
             });
         });
+
+        // 가격 섹션 스크롤 애니메이션
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal, .reveal-scale').forEach(el => revealObserver.observe(el));
 
         // 소스 보기 차단 (우클릭, F12, Ctrl+U, Ctrl+Shift+I/J)
         document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
